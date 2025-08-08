@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Assistant</title>
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Top Bar -->
+        <div class="top-bar">
+            <h1><i class="fas fa-microphone-alt"></i> Voice Assistant</h1>
+            <div class="status">
+                <i class="fas fa-circle status-dot"></i>
+                <span id="status-text">Ready to listen</span>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Left Side - Chat Transcript -->
+            <div class="chat-section">
+                <div class="chat-header">
+                    <h3><i class="fas fa-comments"></i> Conversation</h3>
+                    <button class="clear-chat" id="clear-chat">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+                </div>
+                <div id="chat-window" class="chat-window"></div>
+            </div>
+
+            <!-- Right Side - Mic Animation -->
+            <div class="mic-section">
+                <div class="mic-container">
+                    <button id="mic-btn" class="mic-btn">
+                        <i class="fas fa-microphone mic-icon"></i>
+                    </button>
+                    <div class="pulse-ring"></div>
+                    <div class="pulse-ring ring-2"></div>
+                    <div class="pulse-ring ring-3"></div>
+                </div>
+                <div id="recording-status" class="recording-status">
+                    <i class="fas fa-hand-point-up"></i> Click to speak
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
